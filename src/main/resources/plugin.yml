@@ -1,0 +1,7 @@
+name: FAZE-CUSTOM_ITEMS-MINESTAR
+version: '${project.version}'
+main: com.n4a.minestaritems.Main
+api-version: '1.18'
+depend: [WorldGuard]
+authors: [n4a]
+description: Plugin na itemy eventowe z minestara
