@@ -1,4 +1,4 @@
-package com.n4a.godice.config.domain.message;
+package com.n4a.minestaritems.config.domain.message;
 
 public enum MessageType {
     NOTHING,

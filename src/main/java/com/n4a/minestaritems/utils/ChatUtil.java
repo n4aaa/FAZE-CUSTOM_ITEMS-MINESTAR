@@ -1,14 +1,12 @@
-package com.n4a.rng.utils;
+package com.n4a.minestaritems.utils;
 
+import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
+@UtilityClass
 public class ChatUtil {
     static public final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
 
@@ -40,32 +38,5 @@ public class ChatUtil {
         lore.forEach(s -> fixLore.add(ChatUtil.fixColor(s)));
 
         return fixLore;
-    }
-
-    public static List<String> lores(ItemStack st, Player p) {
-        ItemMeta itemMeta = st.getItemMeta();
-
-        List<String> lore = itemMeta.getLore();
-        if (lore == null) {
-            return new ArrayList<>();
-        }
-        return lore.stream().map(ChatUtil::fixColor).collect(Collectors.toList());
-    }
-
-    public static void sendActionbar(Player player, String message) {
-        if (player == null || message == null) {
-            return;
-        }
-
-        player.sendActionBar(fixColor(message));
-    }
-
-
-    public static void sendTitle(Player p, String t, String s) {
-        p.sendTitle(ChatUtil.fixColor(t), ChatUtil.fixColor(s));
-    }
-
-    private ChatUtil() {
-        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
     }
 }

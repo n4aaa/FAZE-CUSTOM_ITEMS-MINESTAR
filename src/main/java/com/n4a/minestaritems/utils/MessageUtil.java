@@ -1,16 +1,15 @@
-package com.n4a.rng.utils;
+package com.n4a.minestaritems.utils;
 
-import com.n4a.rng.config.domain.message.MessageType;
+import com.n4a.minestaritems.config.domain.message.MessageType;
 import eu.okaeri.commons.bukkit.UnsafeBukkitCommons;
+import lombok.experimental.UtilityClass;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+@UtilityClass
 public class MessageUtil {
-
-    public void message(CommandSender sender, MessageType type, String message) {
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
-
+    public static void message(CommandSender sender, MessageType type, String message) {
+        if (sender instanceof Player player) {
             switch (type) {
                 case NOTHING: {
                     break;

@@ -1,7 +1,7 @@
-package com.n4a.godice.config.domain.message;
+package com.n4a.minestaritems.config.domain.message;
 
-import com.n4a.godice.utils.ChatUtil;
-import com.n4a.godice.utils.MessageUtil;
+import com.n4a.minestaritems.utils.ChatUtil;
+import com.n4a.minestaritems.utils.MessageUtil;
 import eu.okaeri.configs.OkaeriConfig;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,10 +19,10 @@ public class Message extends OkaeriConfig {
     private String message;
 
     public void send(Player player) {
-        new MessageUtil().message(player, type, ChatUtil.fixColor(message));
+        MessageUtil.message(player, type, ChatUtil.fixColor(message));
     }
     public void send(CommandSender commandSender) {
-        new MessageUtil().message(commandSender, type, ChatUtil.fixColor(message));
+        MessageUtil.message(commandSender, type, ChatUtil.fixColor(message));
     }
 
     public Message placeholder(String oldValue, String newValue) {

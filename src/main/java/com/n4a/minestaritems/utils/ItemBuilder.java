@@ -1,8 +1,8 @@
-package com.n4a.rng.utils;
+package com.n4a.minestaritems.utils;
 
-import com.cryptomorin.xseries.SkullUtils;
-import com.n4a.rng.config.domain.skin.Skin;
-import org.bukkit.*;
+import org.bukkit.Color;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -328,13 +328,6 @@ public class ItemBuilder {
         im.getPersistentDataContainer().set(namespacedKey, PersistentDataType.INTEGER, value);
         this.is.setItemMeta(im);
 
-        return this;
-    }
-
-    public ItemBuilder setSkin(Skin skin) {
-        SkullMeta im = (SkullMeta)this.is.getItemMeta();
-        SkullUtils.setSkullBase64(im, skin.getValue(), skin.getSignature());
-        this.is.setItemMeta(im);
         return this;
     }
 
